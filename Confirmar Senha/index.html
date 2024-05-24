@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+
+
+
+    <script>
+        function confereSenha(){
+            const senha = document.querySelector('input[name=senha]');
+            const confirma= document.querySelector('input[name=confirma]');
+
+            if(confirma.value==senha.value){
+                confirma.setCustomValidity('');
+            }else{
+                confirma.setCustomValidity('as senhas não conferem');
+            }
+        }
+
+        function senhaOK(){
+            alert("Senhas Conferem! ")
+        }
+
+    </script>
+
+        
+     
+
+</head>
+
+
+
+<body>
+    <script type="text/javascript" src="script.js"></script>
+
+    <form  name="cadastro"  action="" onsubmit="senhaOK();" method="POST">
+        <label>Senha</label>
+        <input type="password" name="senha"  required onchange='confereSenha();'>
+        <br><br>
+        <label>Repetir Senha</label>
+        <input type="password" name="confirma" required onchange='confereSenha();'>
+        <br>
+        <input type="submit" id="envia" value="enviar">
+
+    </form>
+
+
+	
+
+</body>
+</html>
